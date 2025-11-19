@@ -9,6 +9,7 @@ app.use(cors());
 
 app.get('/api/sneakers', (req, res) => {
   const limit = Number(req.query.limit) || 50;
+
   sneaks.getMostPopular(limit, (err, products) => {
     if (err) {
       console.error(err);
